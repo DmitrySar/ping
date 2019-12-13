@@ -5,7 +5,7 @@ set comp=192.168.1.55
 :start
 ping %comp% /n 1 | find "TTL">nul
 if %ERRORLEVEL% NEQ 0 (
-   @echo %time% %date% Нет соединения >> %file%
+   @echo %time% %date% not connect >> %file%
    <nul set /p strTemp=.
 ) else (
 
