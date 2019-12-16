@@ -1,8 +1,9 @@
 
 @echo off
+chcp 1251
 
-rem Ð´Ð»Ñ Ð·Ð°Ð¿ÑƒÑÐºÐ° Ð² Ñ‚ÐµÑ€Ð¼Ð¸Ð½Ð°Ð»Ðµ: ping.cmd ip_Ð°Ð´Ñ€ÐµÑÑ Ð¿ÑƒÑ‚ÑŒ_Ðº_Ð»Ð¾Ð³Ñƒ
-rem Ð¿Ñ€Ð¸Ð¼ÐµÑ€: ping.cmd 192.168.0.1 d:\ping.log
+rem äëÿ çàïóñêà â òåðìèíàëå: ping.cmd ip_àäðåññ ïóòü_ê_ëîãó
+rem ïðèìåð: ping.cmd 192.168.0.1 d:\ping.log
 
 @echo start scanning %comp%
 @echo insert [ctrl] + [c] for stop scanning
@@ -11,7 +12,7 @@ set file=%2%
 :start
 ping %comp% /n 1 | find "TTL">nul
 if %ERRORLEVEL% NEQ 0 (
-   @echo %time% %date% not connect >> %file%
+   @echo %time% %date% address %comp% not connect >> %file%
    <nul set /p strTemp=.
 ) else (
 
